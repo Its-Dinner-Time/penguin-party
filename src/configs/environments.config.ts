@@ -1,10 +1,8 @@
-import { IGraphqlEnvironments } from './graphql.config';
 import { ITypeormEnvironments } from './typeorm.config';
 
 export interface IEnvironmentConfigs {
   port: number;
   database: ITypeormEnvironments;
-  graphql: IGraphqlEnvironments;
 }
 
 const environments = (): IEnvironmentConfigs => {
@@ -17,11 +15,7 @@ const environments = (): IEnvironmentConfigs => {
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_DATABASE,
     },
-    graphql: {
-      typepaths: process.env.GRAPHQL_TYPE_PATHS.split(
-        process.env.GRAPHQL_TYPE_PATH_SEP || ' ',
-      ),
-    },
+    
   };
 };
 

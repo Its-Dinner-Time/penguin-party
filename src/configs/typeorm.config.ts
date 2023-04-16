@@ -27,7 +27,6 @@ const typeormConfig: TypeOrmModuleAsyncOptions = {
       subscribers: ['dist/**/*.subscriber{.js}'],
       autoLoadEntities: true,
       synchronize: true,
-      logging: 'all',
     };
   },
 };
